@@ -1,9 +1,10 @@
 # pip install -r requirements.txt
+# pip show <package_name>
 pandas
 numpy
 sklearn
-mlflow
+#mlflow
 xgboost
 lightgbm
-seaborn
+seaborn==0.9.0
 keras

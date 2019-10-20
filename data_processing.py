@@ -3,6 +3,9 @@ import seaborn as sns
 import numpy as np
 import pandas as pd
 
+FILE_PATH = ""
+data = pd.read_csv(FILE_PATH)
+
 def correlation_with_target(dataframe: pd.DataFrame, target_column_name: str):
     # Compute Correlation between columns
     for column in dataframe:
@@ -15,3 +18,7 @@ def find_missing_data(dataframe: pd.DataFrame):
         len_data =len(dataframe)
         if num_missing_data:
             print(f'Mising data rate for {column} is {(num_missing_data/len_data*100).round(2)}%')
+
+def log_transform(series: pd.Series):
+    return (series - series.min() + 1).transform(np.log)
+
